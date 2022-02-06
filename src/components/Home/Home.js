@@ -7,15 +7,15 @@ const Home = () => {
   useEffect(() => {
     const movieText = "Harry";
     const fetchMovies = async () => {
-      const res = await movieApi
+      const response = await movieApi
         .get(`?apiKey=${APIKey}&s=${movieText}&type=movie`)
         .catch((err) => {
           console.log("Err :", err);
         });
-      console.log(res.data);
+      console.log(response.data);
     };
     fetchMovies();
-  });
+  }, []);
 
   return (
     <div>
